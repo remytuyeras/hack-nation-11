@@ -1,0 +1,317 @@
+{
+  "version": "1.0",
+  "currency": "gold",
+
+  "resources": {
+    "wheat": 1.0,
+    "flax": 0.8,
+    "water": 0.2,
+    "herbs": 1.5,
+    "berries": 1.2,
+    "meat_raw": 2.0,
+    "eggs": 1.0,
+    "wood": 0.6,
+    "sand": 0.5,
+    "crystal_shard": 2.5,
+    "hide": 1.4,
+    "ore_iron": 3.5,
+    "ore_copper": 3.0,
+    "coal": 2.0,
+
+    "flour": 2.2,
+    "dough": 3.0,
+    "bread": 4.5,
+    "broth": 2.5,
+    "cooked_meat": 5.0,
+    "pie_uncooked": 5.0,
+    "pie_berry": 8.5,
+    "stew_hearty": 10.0,
+
+    "thread": 2.0,
+    "cloth": 3.5,
+    "leather": 3.2,
+    "rope": 2.8,
+
+    "bottle_glass": 1.6,
+    "potion_base": 3.0,
+    "potion_heal": 9.0,
+
+    "ingot_iron": 7.0,
+    "ingot_copper": 6.0,
+    "plate_iron": 8.5,
+    "wire_copper": 5.0,
+    "gear_simple": 9.0,
+
+    "knife": 8.0,
+    "pickaxe": 8.0,
+    "amulet_minor": 12.0
+  },
+
+  "powers": {
+    "harvest": 0.3,
+    "forage": 0.3,
+    "chop": 0.4,
+    "mine": 0.6,
+    "mill": 0.8,
+    "mix": 0.6,
+    "bake": 1.4,
+    "cook": 1.2,
+    "brew": 1.6,
+    "glasswork": 1.3,
+    "smelt": 2.0,
+    "hammer": 1.0,
+    "weave": 0.9,
+    "tan": 1.0,
+    "carve": 1.1,
+    "enchant": 2.5
+  },
+
+  "recipes": [
+    { "id": "gather_water",       "power": { "type": "harvest", "mastery": 1 },  "inputs": {},                                "outputs": { "water": 1 } },
+    { "id": "gather_wheat",       "power": { "type": "harvest",  "mastery": 1 }, "inputs": {},                                "outputs": { "wheat": 1 } },
+    { "id": "gather_flax",        "power": { "type": "harvest",  "mastery": 1 }, "inputs": {},                                "outputs": { "flax": 1 } },
+    { "id": "forage_herbs",       "power": { "type": "forage",   "mastery": 1 }, "inputs": {},                                "outputs": { "herbs": 1 } },
+    { "id": "forage_berries",     "power": { "type": "forage",   "mastery": 1 }, "inputs": {},                                "outputs": { "berries": 1 } },
+    { "id": "hunt_meat",          "power": { "type": "forage",   "mastery": 1 }, "inputs": {},                                "outputs": { "meat_raw": 1 } },
+    { "id": "gather_eggs",        "power": { "type": "harvest",  "mastery": 1 }, "inputs": {},                                "outputs": { "eggs": 1 } },
+    { "id": "chop_wood",          "power": { "type": "chop",     "mastery": 1 }, "inputs": {},                                "outputs": { "wood": 1 } },
+    { "id": "scoop_sand",         "power": { "type": "harvest",  "mastery": 1 }, "inputs": {},                                "outputs": { "sand": 1 } },
+    { "id": "chip_crystal",       "power": { "type": "carve",    "mastery": 1 }, "inputs": {},                                "outputs": { "crystal_shard": 1 } },
+    { "id": "skin_hide",          "power": { "type": "forage",   "mastery": 1 }, "inputs": { "meat_raw": 1 },                 "outputs": { "hide": 1 } },
+    { "id": "mine_iron",          "power": { "type": "mine",     "mastery": 1 }, "inputs": {},                                "outputs": { "ore_iron": 1 } },
+    { "id": "mine_copper",        "power": { "type": "mine",     "mastery": 1 }, "inputs": {},                                "outputs": { "ore_copper": 1 } },
+    { "id": "dig_coal",           "power": { "type": "mine",     "mastery": 1 }, "inputs": {},                                "outputs": { "coal": 1 } },
+
+    { "id": "mk_flour",           "power": { "type": "mill",     "mastery": 1 }, "inputs": { "wheat": 1 },                    "outputs": { "flour": 1 } },
+    { "id": "mk_dough",           "power": { "type": "mix",      "mastery": 1 }, "inputs": { "flour": 1, "water": 1 },        "outputs": { "dough": 1 } },
+    { "id": "mk_bread",           "power": { "type": "bake",     "mastery": 1 }, "inputs": { "dough": 1 },                    "outputs": { "bread": 1 } },
+    { "id": "mk_broth",           "power": { "type": "cook",     "mastery": 1 }, "inputs": { "water": 1, "herbs": 1 },        "outputs": { "broth": 1 } },
+    { "id": "mk_cooked_meat",     "power": { "type": "cook",     "mastery": 1 }, "inputs": { "meat_raw": 1 },                 "outputs": { "cooked_meat": 1 } },
+    { "id": "mk_pie_uncooked",    "power": { "type": "mix",      "mastery": 1 }, "inputs": { "flour": 1, "berries": 1, "eggs": 1 }, "outputs": { "pie_uncooked": 1 } },
+    { "id": "mk_pie_berry",       "power": { "type": "bake",     "mastery": 1 }, "inputs": { "pie_uncooked": 1 },             "outputs": { "pie_berry": 1 } },
+    { "id": "mk_stew_hearty",     "power": { "type": "cook",     "mastery": 2 }, "inputs": { "cooked_meat": 1, "bread": 1, "broth": 1 }, "outputs": { "stew_hearty": 1 } },
+
+    { "id": "mk_thread",          "power": { "type": "weave",    "mastery": 1 }, "inputs": { "flax": 2 },                     "outputs": { "thread": 1 } },
+    { "id": "mk_cloth",           "power": { "type": "weave",    "mastery": 2 }, "inputs": { "thread": 2 },                   "outputs": { "cloth": 1 } },
+    { "id": "mk_leather",         "power": { "type": "tan",      "mastery": 1 }, "inputs": { "hide": 1 },                     "outputs": { "leather": 1 } },
+    { "id": "mk_rope",            "power": { "type": "weave",    "mastery": 1 }, "inputs": { "flax": 3 },                      "outputs": { "rope": 1 } },
+
+    { "id": "mk_bottle_glass",    "power": { "type": "glasswork","mastery": 1 }, "inputs": { "sand": 2 },                     "outputs": { "bottle_glass": 1 } },
+    { "id": "mk_potion_base",     "power": { "type": "brew",     "mastery": 1 }, "inputs": { "bottle_glass": 1, "herbs": 1, "water": 1 }, "outputs": { "potion_base": 1 } },
+    { "id": "mk_potion_heal",     "power": { "type": "brew",     "mastery": 2 }, "inputs": { "potion_base": 1, "berries": 1 }, "outputs": { "potion_heal": 1 } },
+
+    { "id": "mk_ingot_iron",      "power": { "type": "smelt",    "mastery": 1 }, "inputs": { "ore_iron": 1, "coal": 1 },      "outputs": { "ingot_iron": 1 } },
+    { "id": "mk_ingot_copper",    "power": { "type": "smelt",    "mastery": 1 }, "inputs": { "ore_copper": 1, "coal": 1 },    "outputs": { "ingot_copper": 1 } },
+    { "id": "mk_plate_iron",      "power": { "type": "hammer",   "mastery": 1 }, "inputs": { "ingot_iron": 1 },               "outputs": { "plate_iron": 1 } },
+    { "id": "mk_wire_copper",     "power": { "type": "hammer",   "mastery": 1 }, "inputs": { "ingot_copper": 1 },             "outputs": { "wire_copper": 1 } },
+    { "id": "mk_gear_simple",     "power": { "type": "hammer",   "mastery": 2 }, "inputs": { "plate_iron": 1, "wire_copper": 1 }, "outputs": { "gear_simple": 1 } },
+
+    { "id": "mk_knife",           "power": { "type": "hammer",   "mastery": 2 }, "inputs": { "ingot_iron": 1, "wood": 1 },    "outputs": { "knife": 1 } },
+    { "id": "mk_pickaxe",         "power": { "type": "hammer",   "mastery": 2 }, "inputs": { "ingot_iron": 1, "wood": 1, "rope": 1 }, "outputs": { "pickaxe": 1 } },
+
+    { "id": "mk_amulet_minor",    "power": { "type": "enchant",  "mastery": 1 }, "inputs": { "gear_simple": 1, "crystal_shard": 1 }, "outputs": { "amulet_minor": 1 } }
+  ],
+
+  "default_player": {
+    "role": "adventurer",
+    "powers": [
+      { "power": { "type": "harvest",   "mastery": 1 }, "time": 5 },
+      { "power": { "type": "forage",    "mastery": 1 }, "time": 5 },
+      { "power": { "type": "mill",      "mastery": 1 }, "time": 5 },
+      { "power": { "type": "mix",       "mastery": 1 }, "time": 4 },
+      { "power": { "type": "bake",      "mastery": 1 }, "time": 8 },
+      { "power": { "type": "cook",      "mastery": 1 }, "time": 6 },
+      { "power": { "type": "brew",      "mastery": 1 }, "time": 7 },
+      { "power": { "type": "glasswork", "mastery": 1 }, "time": 7 },
+      { "power": { "type": "mine",      "mastery": 1 }, "time": 8 },
+      { "power": { "type": "smelt",     "mastery": 1 }, "time": 10 },
+      { "power": { "type": "hammer",    "mastery": 1 }, "time": 6 },
+      { "power": { "type": "weave",     "mastery": 1 }, "time": 6 },
+      { "power": { "type": "tan",       "mastery": 1 }, "time": 7 },
+      { "power": { "type": "carve",     "mastery": 1 }, "time": 7 },
+      { "power": { "type": "enchant",   "mastery": 0 }, "time": 15 }
+    ],
+    "inventory": {
+      "bread": 2,
+      "water": 2,
+      "knife": 1,
+      "gold": 5
+    },
+    "random": {
+      "rolls": { "min": 1, "max": 3 },          
+      "budget": { "min": 0, "max": 15 },
+      "exclusions": ["knife"], 
+      "pool": [
+        { "item": "bread",         "weight": 2.0, "qty": { "min": 1, "max": 2 } },
+        { "item": "water",         "weight": 2.0, "qty": { "min": 1, "max": 3 } },
+        { "item": "berries",       "weight": 1.6, "qty": { "min": 1, "max": 2 } },
+        { "item": "herbs",         "weight": 1.2, "qty": { "min": 1, "max": 2 } },
+        { "item": "flour",         "weight": 1.0, "qty": { "min": 1, "max": 1 } },
+        { "item": "rope",          "weight": 0.7, "qty": { "min": 1, "max": 1 } },
+        { "item": "potion_heal",   "weight": 0.4, "qty": { "min": 1, "max": 1 }, "value": 9.0 },
+        { "item": "gold",          "weight": 1.0, "qty": { "min": 3, "max": 10 }, "value": 1.0 }
+      ]
+    }
+  },
+
+  "npcs": {
+  "npc_chef_01": {
+    "role": "chef",
+    "powers": [
+      { "power": { "type": "cook", "mastery": 3 }, "time": 4 },
+      { "power": { "type": "bake", "mastery": 2 }, "time": 6 },
+      { "power": { "type": "mix",  "mastery": 2 }, "time": 3 },
+      { "power": { "type": "brew", "mastery": 1 }, "time": 6 }
+    ],
+    "inventory": {
+      "water": 6,
+      "herbs": 6,
+      "berries": 4,
+      "flour": 6,
+      "dough": 4,
+      "bread": 6,
+      "meat_raw": 3,
+      "eggs": 6,
+      "bottle_glass": 3,
+      "potion_base": 2,
+      "cooked_meat": 2,
+      "broth": 3,
+      "knife": 1,
+      "gold": 15
+    }
+  },
+  "npc_smith_01": {
+    "role": "smith",
+    "powers": [
+      { "power": { "type": "smelt",  "mastery": 2 }, "time": 7 },
+      { "power": { "type": "hammer", "mastery": 3 }, "time": 4 }
+    ],
+    "inventory": {
+      "ore_iron": 6,
+      "coal": 6,
+      "ingot_iron": 4,
+      "plate_iron": 2,
+      "wire_copper": 2,
+      "wood": 4,
+      "rope": 2,
+      "knife": 1,
+      "pickaxe": 1,
+      "gold": 20
+    }
+  },
+  "npc_weaver_01": {
+    "role": "weaver",
+    "powers": [
+      { "power": { "type": "weave", "mastery": 3 }, "time": 3 },
+      { "power": { "type": "tan",   "mastery": 2 }, "time": 5 }
+    ],
+    "inventory": {
+      "flax": 10,
+      "thread": 6,
+      "cloth": 4,
+      "hide": 2,
+      "leather": 2,
+      "rope": 3,
+      "knife": 1,
+      "gold": 18
+    }
+  },
+  "npc_alchemist_01": {
+    "role": "alchemist",
+    "powers": [
+      { "power": { "type": "brew",      "mastery": 3 }, "time": 5 },
+      { "power": { "type": "glasswork", "mastery": 2 }, "time": 5 },
+      { "power": { "type": "enchant",   "mastery": 1 }, "time": 9 }
+    ],
+    "inventory": {
+      "sand": 6,
+      "bottle_glass": 6,
+      "herbs": 6,
+      "water": 6,
+      "potion_base": 4,
+      "potion_heal": 2,
+      "crystal_shard": 2,
+      "gear_simple": 1,
+      "amulet_minor": 1,
+      "gold": 25
+    }
+  },
+  "npc_miner_01": {
+    "role": "miner",
+    "powers": [
+      { "power": { "type": "mine", "mastery": 3 }, "time": 4 },
+      { "power": { "type": "chop", "mastery": 1 }, "time": 6 }
+    ],
+    "inventory": {
+      "ore_iron": 6,
+      "ore_copper": 4,
+      "coal": 6,
+      "wood": 4,
+      "rope": 2,
+      "pickaxe": 1,
+      "bread": 2,
+      "water": 4,
+      "gold": 12
+    }
+  },
+  "npc_forager_01": {
+    "role": "forager",
+    "powers": [
+      { "power": { "type": "forage",  "mastery": 3 }, "time": 3 },
+      { "power": { "type": "harvest", "mastery": 2 }, "time": 4 }
+    ],
+    "inventory": {
+      "berries": 8,
+      "herbs": 6,
+      "meat_raw": 3,
+      "eggs": 6,
+      "hide": 2,
+      "knife": 1,
+      "bread": 2,
+      "water": 4,
+      "gold": 10
+    }
+  },
+  "npc_enchanter_01": {
+    "role": "enchanter",
+    "powers": [
+      { "power": { "type": "enchant", "mastery": 3 }, "time": 6 },
+      { "power": { "type": "carve",   "mastery": 2 }, "time": 5 }
+    ],
+    "inventory": {
+      "crystal_shard": 4,
+      "gear_simple": 2,
+      "amulet_minor": 1,
+      "cloth": 2,
+      "leather": 2,
+      "bottle_glass": 2,
+      "gold": 30
+      }
+    }
+  },
+
+  "combat": {
+    "requires": {
+      "attack_power": true,
+      "defense_power": true
+    },
+    "base_damage": 1,
+
+    "items": {
+      "knife":          { "attack": "slash",  "damage": 4 },
+      "pickaxe":        { "attack": "blunt",  "damage": 3 },
+      "crystal_shard":  { "attack": "arcane", "damage": 2 },
+
+      "plate_iron":     { "defense": "tough" },
+      "leather":        { "defense": "tough" },
+      "cloth":          { "defense": "soft" },
+      "amulet_minor":   { "defense": "ward_arcane" }
+    },
+
+    "opposition": {
+      "slash":  { "vs": { "tough": 1.10, "soft": 1.30, "ward_arcane": 1.00, "none": 1.00 } },
+      "blunt":  { "vs": { "tough": 0.90, "soft": 1.20, "ward_arcane": 1.00, "none": 1.00 } },
+      "arcane": { "vs": { "ward_arcane": 0.50, "tough": 1.00, "soft": 1.00, "none": 1.00 } }
+    }
+  }
+}
