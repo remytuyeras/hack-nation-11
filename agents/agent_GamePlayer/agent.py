@@ -28,7 +28,7 @@ client = SummonerClient(name="GamePlayerAgent")
 async def init_player_db(pid: str):
     global PLAYER_DB
     
-    PLAYER_DB = Database(Path(__file__).with_name(f"player_{pid}.db"))
+    PLAYER_DB = Database(Path(__file__).with_name(f"file:player_{pid}.sqlite3?mode=rwc"))
     await create_all_player(PLAYER_DB)
 
 # --- MemoryKV helpers (player-owned persistence) ---

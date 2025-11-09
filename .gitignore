@@ -8,6 +8,8 @@ tests
 *.db
 *.db-shm
 *.db-wal
+logs/
+agent_GamePlayer_gpt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
