@@ -40,6 +40,14 @@ python agents/agent_GamePlayer/agent.py --id bob
 **Both players:** use **WASD/arrow keys** to move.
 **Either player:** press **H** → sends “hello” chat; see it appear in the **right CHAT panel** and (on Windows) as a bubble near the speaker.
 **Expected visuals:** seeded grass scrolling under camera; your avatar image for yourself; circles for others; top-left HUD line shows `ID`, `players`, `coords`, `seed`.
+**Prompt Structure/ Personality:** This prompt ensures greetings are context-aware, lively, and adapt to previous interactions.
+{
+  "name": "hello",
+  "style": "friendly",
+  "prompt": "You are a friendly traveler in a mystical RPG world. Someone greets you or starts a conversation. Respond naturally and with personality — be kind, witty, or curious depending on prior encounters.",
+  "summary_instruction": "Summarize how greetings and interactions have evolved. Focus on familiarity and tone."
+}
+
 
 ## 2) Targeting + HUD base fields
 
@@ -64,6 +72,15 @@ python agents/agent_GamePlayer/agent.py --id bob
 
 > **Persistence check (later):** we’ll quit and re-open to see HUD restore.
 
+**Prompt Structure/ Personality:** This prompt ensure adaptive, context-aware defensive behavior.
+{
+  "name": "defense",
+  "style": "defense",
+  "prompt": "You brace for defense in a fantasy RPG world. Describe your defensive move — whether it's a spell, shield, or quick reflex. Show awareness of your opponent and previous attacks if known.",
+  "summary_instruction": "Summarize the player's defensive approach, their adaptability, and notable moves."
+}
+
+
 ## 4) Emotions (async HUD enrichment) + reputation
 
 **On Player 1 (mode=social, target=demo2):**
@@ -75,6 +92,15 @@ python agents/agent_GamePlayer/agent.py --id bob
 
 **Expected visuals:** bottom-left HUD gains an `emo:` line with live values; CHAT panel shows small toasts like `anger(demo2)=0.3`.
 
+**Prompt Structure/ Personality:** Guarantees emotionally consistent, vivid reactions tied to game events.
+{
+  "name": "emotion",
+  "style": "emotional",
+  "prompt": "Express your current emotional state in this RPG world. Mention what caused this feeling — maybe a battle, weather, or another player's words. Be vivid but concise, using emotional realism.",
+  "summary_instruction": "Summarize how the player's emotions have changed over time and what influenced them."
+}
+
+
 ## 5) Skills carousel (learn/teach) + HUD
 
 **On Player 1 (mode=social):**
@@ -84,6 +110,15 @@ python agents/agent_GamePlayer/agent.py --id bob
 * Press **L** to **learn** from the target (anger gate can block).
 * Press **K** to **teach** (requires small payment item; gate can block).
   **Expected:** HUD updates immediately; GM reply in logs and CHAT toasts; your local DB `Reputation` mirrors accepted `rep` results.
+
+**Prompt Structure/ Personality:** Ensures strategic, reflective decision-making.
+{
+  "name": "thought",
+  "style": "thoughtful",
+  "prompt": "Think aloud about your next plan or move. Reflect on what worked or failed before. Show personality — cautious, bold, or cunning.",
+  "summary_instruction": "Summarize the player's overall thinking style and strategic evolution."
+}
+
 
 ## 6) Craft carousel + action + inventory effects
 
@@ -112,6 +147,16 @@ python agents/agent_GamePlayer/agent.py --id bob
   * If **fear** (on target) ≥ threshold, attack is blocked with a toast “won’t attack (fear gate)”.
   * If allowed and item owned, GM processes `attack/counter` and logs effects.
     **Expected:** quick toasts; possible health/combat effects in logs.
+
+**Prompt Structure/ Personality:** Produces strategic, context-sensitive combat actions reflecting prior interactions.
+{
+  "key": "a",
+  "name": "attack",
+  "style": "combat",
+  "prompt": "Describe your attack in a fantasy RPG battle. Be strategic — adapt based on your enemy and previous fights. Keep the tone heroic, and avoid repeating the same action twice unless required.",
+  "summary_instruction": "Summarize how this player tends to fight — their tactics, patterns, and signature style."
+}
+
 
 ## 9) Persistence proof (close & restore)
 
